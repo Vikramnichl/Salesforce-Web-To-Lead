@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Register with Us</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(180deg, #f7765c 0%, #7fb6c9 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+  }
+
+  /* Container: left form, right text */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    width: 90%;
+    max-width: 1200px;
+  }
+
+  /* Form styling (unchanged) */
+  .w2l-form-container {
+    padding: 40px;
+    border-radius: 16px;
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #111827;
+  }
+
+  .w2l-form-container h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .w2l-form-container p.subtitle {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 32px;
+    color: #4b5563;
+  }
+
+  .w2l-form-container form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .w2l-form-container form .form-group {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .w2l-form-container form input[type="text"],
+  .w2l-form-container form input[type="email"],
+  .w2l-form-container form input[type="tel"],
+  .w2l-form-container form textarea,
+  .w2l-form-container form select {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+
+  .w2l-form-container form textarea {
+    resize: vertical;
+  }
+
+  .checkbox-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+  }
+  
+
+  .w2l-form-container input[type="submit"] {
+    width: 100%;
+    padding: 16px;
+    background: #f7765c;
+    color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 24px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+  }
+
+  .w2l-form-container input[type="submit"]:hover {
+    opacity: 0.9;
+  }
+
+  /* Animated text section */
+  .text-section {
+     display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 25%; /* space below form */
+  color: #fff;
+  }
+
+  .text-section h1 {
+ font-size: 48px;
+  font-weight: 900;
+  margin: 0;
+  animation: bounce 2s infinite;
+  }
+
+  .text-section p {
+    font-size: 24px;
+    margin: 16px 0 0;
+    font-weight: 600;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-20px); }
+    60% { transform: translateY(-10px); }
+  }
+
+  @media(max-width: 900px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+    .text-section h1 {
+      font-size: 48px;
+    }
+    .text-section p {
+      font-size: 20px;
+    }
+  }
+
+</style>
+</head>
+
+
+<body>
+<div class="container">
+  <!-- Left: Form -->
+  <div class="w2l-form-container">
+    <h2>Walk with us on your journey.</h2>
+    <p class="subtitle">Your health journey is yours to lead - but you'll never be without a team, a guide, and a community committed to moving you forward with you.</p>
+    
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DKj00000ZlKij" method="POST">
+      <input type="hidden" name="oid" value="00DKj00000ZlKij">
+      <input type="hidden" name="retURL" value="http://">
+
+      <div class="form-group">
+        <input id="first_name" maxlength="40" name="first_name" type="text" placeholder="First Name" required>
+      </div>
+      <div class="form-group">
+        <input id="last_name" maxlength="80" name="last_name" type="text" placeholder="Last Name" required>
+      </div>
+      <div class="form-group">
+        <input id="email" maxlength="80" name="email" type="email" placeholder="Email" required>
+      </div>
+      <div class="form-group">
+        <input id="mobile" maxlength="40" name="mobile" type="tel" placeholder="Phone Number" required>
+      </div>
+      <div class="form-group">
+        <textarea id="street" name="street" placeholder="Enter street" rows="2" required></textarea>
+      </div>
+      <div class="form-group">
+        <input id="city" maxlength="40" name="city" type="text" placeholder="Enter city" required>
+      </div> 
+      <div class="form-group">
+        <input id="state" maxlength="40" name="state" type="text" placeholder="Enter state" required>
+      </div> 
+      <div class="form-group">
+        <input id="country" maxlength="40" name="country" type="text" placeholder="Enter country" required>
+      </div>
+
+      <div style="width:100%; margin-bottom:16px;">
+        <p>What are your goals/motivations?</p>
+
+        <!-- Hidden Salesforce multi-select -->
+        <select id="00NKj00001IdQWo" multiple="multiple" name="00NKj00001IdQWo" title="Health Goals / Motivations" style="display:none;">
+          <option value="Understand my state of health">Understand my state of health</option>
+          <option value="Optimize my health">Optimize my health</option>
+          <option value="Build healthy habits">Build healthy habits</option>
+          <option value="Learn About Nutrition And Healthy Eating">Learn About Nutrition And Healthy Eating</option>
+          <option value="Be part Of Healthy Community">Be part Of Healthy Community</option>
+        </select>
+
+        <!-- Friendly checkboxes for users -->
+        <div class="checkbox-group">
+          <label><input type="checkbox" value="Understand my state of health"> Understand my state of health</label>
+          <label><input type="checkbox" value="Optimize my health"> Optimize my health</label>
+          <label><input type="checkbox" value="Build healthy habits"> Build healthy habits</label>
+          <label><input type="checkbox" value="Learn About Nutrition And Healthy Eating"> Learn About Nutrition And Healthy Eating</label>
+          <label><input type="checkbox" value="Be part Of Healthy Community"> Be part of a healthy community</label>
+        </div>
+      </div>
+
+      <input type="submit" value="Register Now">
+    </form>
+  </div>
+
+  <!-- Right: Branding text -->
+  <div class="text-section">
+    <h1>Morrow</h1>
+    <p>Better health, better together</p>
+  </div>
+</div>
+
+<script>
+document.querySelector("form").addEventListener("submit", function() {
+  let select = document.getElementById("00NKj00001IdQWo");
+  // clear previous selections
+  Array.from(select.options).forEach(opt => opt.selected = false);
+
+  // map checkboxes to select options
+  document.querySelectorAll(".checkbox-group input[type=checkbox]:checked").forEach(cb => {
+    let match = Array.from(select.options).find(opt => opt.value === cb.value);
+    if (match) match.selected = true;
+  });
+});
+</script>
+</body>
+
+</html>
