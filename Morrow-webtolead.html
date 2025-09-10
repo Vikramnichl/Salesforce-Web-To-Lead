@@ -235,18 +235,15 @@
   </div>
 </div>
 
-<script>
-document.querySelector("form").addEventListener("submit", function() {
-  let select = document.getElementById("00Nd5000006QTxN"); // Correct ID
-  // clear previous selections
-  Array.from(select.options).forEach(opt => opt.selected = false);
-
-  // map checked checkboxes to select options
-  document.querySelectorAll(".checkbox-group input[type=checkbox]:checked").forEach(cb => {
-    let match = Array.from(select.options).find(opt => opt.value === cb.value);
-    if (match) match.selected = true;
+<script> 
+  document.querySelector("form").addEventListener("submit", function()
+  { let select = document.getElementById("00Nd5000006QTxN"); // clear previous selections 
+   Array.from(select.options).forEach(opt => opt.selected = false); // map checkboxes to select options 
+   document.querySelectorAll(".checkbox-group input[type=checkbox]:checked").forEach(cb => {
+     let match = Array.from(select.options).find(opt => opt.value === cb.value);
+     if (match) match.selected = true; 
+   });
   });
-});
 </script>
 
 </body>
