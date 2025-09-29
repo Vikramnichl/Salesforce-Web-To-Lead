@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel101 – Contact / Lead Form</title>
+  <style>
+    /* ---------- GLOBAL ---------- */
+    body {
+      background: #f5f5f5;
+      font-family: 'Open Sans', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      color: #1B4E9B;
+      margin-top: 40px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* ---------- FORM CONTAINER ---------- */
+    .hotel101-form-wrapper {
+      max-width: 640px;
+      background: #fff;
+      margin: 40px auto;
+      padding: 30px 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .hotel101-form-wrapper label {
+      display: block;
+      margin: 18px 0 6px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .hotel101-form-wrapper input[type="text"],
+    .hotel101-form-wrapper input[type="email"],
+    .hotel101-form-wrapper select,
+    .hotel101-form-wrapper textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.25s, box-shadow 0.25s;
+      box-sizing: border-box;
+    }
+
+    .hotel101-form-wrapper input:focus,
+    .hotel101-form-wrapper select:focus,
+    .hotel101-form-wrapper textarea:focus {
+      outline: none;
+      border-color: #1B4E9B;
+      box-shadow: 0 0 0 3px rgba(27, 78, 155, 0.1);
+    }
+
+    .hotel101-form-wrapper textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* ---------- BUTTON ---------- */
+    .hotel101-form-wrapper button[type="submit"] {
+      display: inline-block;
+      margin-top: 24px;
+      background: #1B4E9B;
+      color: #fff;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+      width: 100%;
+    }
+    .logo{
+        align-items: center;
+        text-align: center;
+    }
+
+    .hotel101-form-wrapper button[type="submit"]:hover {
+      background: #163e7d;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .hotel101-form-wrapper {
+        padding: 20px;
+      }
+    }
+       /* ---------- HEADER SECTION ---------- */
+    .hotel101-header {
+      text-align: center;
+      padding: 40px 20px 10px;
+    }
+    .hotel101-header img {
+      width: 70px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    .hotel101-header h1 {
+      color: #1B4E9B;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px;
+      margin: 0 0 10px;
+    }
+    
+  </style>
+</head>
+<body>
+
+
+
+  <div class="hotel101-form-wrapper">
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DKY00000NTXtH" method="POST">
+ <div class="hotel101-header">
+    <img src="https://hotel101global.com/wp-content/uploads/2023/06/Hotel-101-Global.png" alt="Hotel101 Global Logo">
+    <h1>Invest in a Hotel101 unit today.</h1>
+  </div>
+      <!-- Salesforce Hidden Fields -->
+      <input type="hidden" name="oid" value="00DKY00000NTXtH">
+      <input type="hidden" name="retURL" value="https://hotel101global.com/">
+      <input type="hidden" id="lead_source" name="lead_source" value="Website">
+
+      <!-- First Name -->
+      <label for="first_name">First Name*</label>
+      <input id="first_name" maxlength="40" name="first_name" type="text" required>
+
+      <!-- Last Name -->
+      <label for="last_name">Last Name*</label>
+      <input id="last_name" maxlength="80" name="last_name" type="text" required>
+
+ 
+
+      <!-- Type of Inquiry -->
+      <label for="00NKY00000Rp9sK">Type of Inquiry*</label>
+      <select id="00NKY00000Rp9sK" name="00NKY00000Rp9sK" required>
+        <option value="">-- Select --</option>
+        <option value="General Inquiry">General Inquiry</option>
+        <option value="Payment">Payment</option>
+        <option value="Partnership">Partnership</option>
+        <option value="Sales Inquiry - Hotel101 Niseko">Sales Inquiry - Hotel101 Niseko</option>
+        <option value="Sales Inquiry - Hotel101 Madrid">Sales Inquiry - Hotel101 Madrid</option>
+        <option value="Sales Inquiry - Hotel101 Philippines">Sales Inquiry - Hotel101 Philippines</option>
+      </select>
+
+      <!-- Email -->
+      <label for="email">Email*</label>
+      <input id="email" maxlength="80" name="email" type="email" required>
+
+      <!-- Mobile -->
+      <label for="phone">Mobile*</label>
+      <input id="phone" maxlength="40" name="phone" type="text" required>
+
+      <!-- Description -->
+      <label for="description">Message / Inquiry*</label>
+      <textarea id="description" name="description" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+</body>
+</html>
