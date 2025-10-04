@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +12,6 @@
       margin: 0;
       padding: 0;
     }
-
     h1 {
       text-align: center;
       color: #1B4E9B;
@@ -28,7 +26,7 @@
       margin: 40px auto;
       padding: 30px 40px;
       border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     }
 
     .hotel101-form-wrapper label {
@@ -79,10 +77,9 @@
       transition: background 0.3s;
       width: 100%;
     }
-
-    .logo {
-      align-items: center;
-      text-align: center;
+    .logo{
+        align-items: center;
+        text-align: center;
     }
 
     .hotel101-form-wrapper button[type="submit"]:hover {
@@ -94,7 +91,6 @@
       .hotel101-form-wrapper {
         padding: 20px;
       }
-
       .form-row {
         flex-direction: column;
       }
@@ -105,13 +101,11 @@
       text-align: center;
       padding: 40px 20px 10px;
     }
-
     .hotel101-header img {
       width: 70px;
       height: auto;
       margin-bottom: 20px;
     }
-
     .hotel101-header h1 {
       color: #1B4E9B;
       font-family: 'Montserrat', sans-serif;
@@ -124,21 +118,17 @@
       display: flex;
       gap: 16px;
     }
-
     .form-row .form-group {
       flex: 1;
     }
   </style>
 </head>
-
 <body>
 
   <div class="hotel101-form-wrapper">
-    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DKY00000NTXtH"
-      method="POST">
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DKY00000NTXtH" method="POST">
       <div class="hotel101-header">
-        <img src="https://hotel101global.com/wp-content/uploads/2023/06/Hotel-101-Global.png"
-          alt="Hotel101 Global Logo">
+        <img src="https://hotel101global.com/wp-content/uploads/2023/06/Hotel-101-Global.png" alt="Hotel101 Global Logo">
         <h1>Invest in a Hotel101 unit today.</h1>
       </div>
 
@@ -163,7 +153,7 @@
       <!-- Row 2: Inquiry + Email -->
       <div class="form-row">
         <div class="form-group">
-          <label for="phone">Mobile*</label>
+           <label for="phone">Mobile*</label>
           <input id="phone" maxlength="40" name="phone" type="text" required>
         </div>
         <div class="form-group">
@@ -174,34 +164,8 @@
 
       <!-- Row 3: Mobile -->
       <div class="form-row">
-
         <div class="form-group">
-          <label for="street">Street</label>
-          <input id="street" maxlength="150" name="street" type="text">
-        </div>
-        <div class="form-group">
-          <label for="city">City</label>
-          <input id="city" maxlength="50" name="city" type="text">
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="state">State</label>
-          <input id="state" maxlength="50" name="state" type="text">
-        </div>
-        <div class="form-group">
-          <label for="postalcode">Postal Code</label>
-          <input id="postalcode" maxlength="20" name="postalcode" type="text">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="country">Country</label>
-          <input id="country" maxlength="50" name="country" type="text">
-        </div>
-         <div class="form-group">
-          <label for="00NKY00000Rp9sK">Type of Inquiry*</label>
+           <label for="00NKY00000Rp9sK">Type of Inquiry*</label>
           <select id="00NKY00000Rp9sK" name="00NKY00000Rp9sK" required>
             <option value="">-- Select --</option>
             <option value="General Inquiry">General Inquiry</option>
@@ -211,8 +175,10 @@
             <option value="Sales Inquiry - Hotel101 Madrid">Sales Inquiry - Hotel101 Madrid</option>
             <option value="Sales Inquiry - Hotel101 Philippines">Sales Inquiry - Hotel101 Philippines</option>
           </select>
-        </div> 
+        </div>
+        
       </div>
+
       <!-- Message -->
       <label for="description">Message / Inquiry*</label>
       <textarea id="description" name="description" required></textarea>
@@ -222,5 +188,4 @@
   </div>
 
 </body>
-
 </html>
