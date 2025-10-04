@@ -91,8 +91,12 @@
       .hotel101-form-wrapper {
         padding: 20px;
       }
+      .form-row {
+        flex-direction: column;
+      }
     }
-       /* ---------- HEADER SECTION ---------- */
+
+    /* ---------- HEADER SECTION ---------- */
     .hotel101-header {
       text-align: center;
       padding: 40px 20px 10px;
@@ -108,57 +112,73 @@
       font-size: 28px;
       margin: 0 0 10px;
     }
-    
+
+    /* New row styles */
+    .form-row {
+      display: flex;
+      gap: 16px;
+    }
+    .form-row .form-group {
+      flex: 1;
+    }
   </style>
 </head>
 <body>
 
-
-
   <div class="hotel101-form-wrapper">
     <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DKY00000NTXtH" method="POST">
- <div class="hotel101-header">
-    <img src="https://hotel101global.com/wp-content/uploads/2023/06/Hotel-101-Global.png" alt="Hotel101 Global Logo">
-    <h1>Invest in a Hotel101 unit today.</h1>
-  </div>
+      <div class="hotel101-header">
+        <img src="https://hotel101global.com/wp-content/uploads/2023/06/Hotel-101-Global.png" alt="Hotel101 Global Logo">
+        <h1>Invest in a Hotel101 unit today.</h1>
+      </div>
+
       <!-- Salesforce Hidden Fields -->
       <input type="hidden" name="oid" value="00DKY00000NTXtH">
       <input type="hidden" name="retURL" value="https://hotel101global.com/">
       <input type="hidden" id="lead_source" name="lead_source" value="Website">
-<!-- ===== Hidden Company ===== -->
-<input type="hidden" name="company" value="Hotel 101 Global">
+      <input type="hidden" name="company" value="Hotel 101 Global">
 
-      <!-- First Name -->
-      <label for="first_name">First Name*</label>
-      <input id="first_name" maxlength="40" name="first_name" type="text" required>
+      <!-- Row 1: First + Last Name -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="first_name">First Name*</label>
+          <input id="first_name" maxlength="40" name="first_name" type="text" required>
+        </div>
+        <div class="form-group">
+          <label for="last_name">Last Name*</label>
+          <input id="last_name" maxlength="80" name="last_name" type="text" required>
+        </div>
+      </div>
 
-      <!-- Last Name -->
-      <label for="last_name">Last Name*</label>
-      <input id="last_name" maxlength="80" name="last_name" type="text" required>
+      <!-- Row 2: Inquiry + Email -->
+      <div class="form-row">
+        <div class="form-group">
+           <label for="phone">Mobile*</label>
+          <input id="phone" maxlength="40" name="phone" type="text" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email*</label>
+          <input id="email" maxlength="80" name="email" type="email" required>
+        </div>
+      </div>
 
- 
+      <!-- Row 3: Mobile -->
+      <div class="form-row">
+        <div class="form-group">
+           <label for="00NKY00000Rp9sK">Type of Inquiry*</label>
+          <select id="00NKY00000Rp9sK" name="00NKY00000Rp9sK" required>
+            <option value="">-- Select --</option>
+            <option value="General Inquiry">General Inquiry</option>
+            <option value="Payment">Payment</option>
+            <option value="Partnership">Partnership</option>
+            <option value="Sales Inquiry - Hotel101 Niseko">Sales Inquiry - Hotel101 Niseko</option>
+            <option value="Sales Inquiry - Hotel101 Madrid">Sales Inquiry - Hotel101 Madrid</option>
+            <option value="Sales Inquiry - Hotel101 Philippines">Sales Inquiry - Hotel101 Philippines</option>
+          </select>
+        </div>
+      </div>
 
-      <!-- Type of Inquiry -->
-      <label for="00NKY00000Rp9sK">Type of Inquiry*</label>
-      <select id="00NKY00000Rp9sK" name="00NKY00000Rp9sK" required>
-        <option value="">-- Select --</option>
-        <option value="General Inquiry">General Inquiry</option>
-        <option value="Payment">Payment</option>
-        <option value="Partnership">Partnership</option>
-        <option value="Sales Inquiry - Hotel101 Niseko">Sales Inquiry - Hotel101 Niseko</option>
-        <option value="Sales Inquiry - Hotel101 Madrid">Sales Inquiry - Hotel101 Madrid</option>
-        <option value="Sales Inquiry - Hotel101 Philippines">Sales Inquiry - Hotel101 Philippines</option>
-      </select>
-
-      <!-- Email -->
-      <label for="email">Email*</label>
-      <input id="email" maxlength="80" name="email" type="email" required>
-
-      <!-- Mobile -->
-      <label for="phone">Mobile*</label>
-      <input id="phone" maxlength="40" name="phone" type="text" required>
-
-      <!-- Description -->
+      <!-- Message -->
       <label for="description">Message / Inquiry*</label>
       <textarea id="description" name="description" required></textarea>
 
