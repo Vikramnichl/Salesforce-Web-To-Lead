@@ -1,1 +1,223 @@
-new
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virat ❤️ Anushka</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background:#0b0b0b;
+      color:#fff;
+      scroll-behavior:smooth;
+    }
+
+    h1,h2,h3 { font-family:'Playfair Display', serif; }
+
+    section {
+      padding:80px 20px;
+      text-align:center;
+    }
+
+    /* HERO */
+    .hero {
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(to bottom, rgba(0,0,0,0.6), #000), url('assets/couple.jpg') center/cover;
+    }
+
+    .hero h1 {
+      font-size:3rem;
+      color:gold;
+    }
+
+    #musicBtn {
+      position:fixed;
+      top:20px;
+      right:20px;
+      background:#111;
+      border:1px solid gold;
+      color:gold;
+      padding:10px;
+      border-radius:50%;
+      cursor:pointer;
+    }
+
+    /* QUOTE */
+    .quote {
+      font-size:1.5rem;
+      max-width:600px;
+      margin:auto;
+      opacity:0.8;
+    }
+
+    /* CARD */
+    .card {
+      background:#111;
+      border:1px solid rgba(255,215,0,0.3);
+      padding:30px;
+      border-radius:20px;
+      margin:20px auto;
+      max-width:400px;
+      transition:0.3s;
+    }
+
+    .card:hover {
+      transform:translateY(-10px);
+      box-shadow:0 10px 30px rgba(255,215,0,0.2);
+    }
+
+    /* COUNTDOWN */
+    #countdown {
+      font-size:2rem;
+      color:gold;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    /* MAP */
+    iframe {
+      width:90%;
+      height:300px;
+      border:none;
+      border-radius:20px;
+    }
+
+    /* FORM */
+    form {
+      display:flex;
+      flex-direction:column;
+      gap:15px;
+      max-width:400px;
+      margin:auto;
+    }
+
+    input, select, textarea {
+      padding:10px;
+      border-radius:10px;
+      border:none;
+    }
+
+    button {
+      padding:12px;
+      background:gold;
+      color:black;
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+  </style>
+</head>
+<body>
+
+<button id="musicBtn">▶</button>
+<audio id="bgMusic" loop>
+  <source src="assets/music.mp3" type="audio/mp3">
+</audio>
+
+<section class="hero">
+  <h1 data-aos="fade-up">Virat ❤️ Anushka</h1>
+</section>
+
+<section>
+  <p class="quote" data-aos="fade-up">"Two souls with but a single thought, two hearts that beat as one."</p>
+</section>
+
+<section>
+  <div class="card" data-aos="zoom-in">
+    <h2>Wedding Date</h2>
+    <p>12 December 2026 💍</p>
+  </div>
+</section>
+
+<section>
+  <img src="assets/couple.jpg" style="width:80%; border-radius:20px;" data-aos="fade-up">
+</section>
+
+<section>
+  <h2>Countdown</h2>
+  <div id="countdown"></div>
+</section>
+
+<section>
+  <h2>Events</h2>
+  <div class="timeline">
+    <div class="card">Mehendi 🌿</div>
+    <div class="card">Haldi 💛</div>
+    <div class="card">Wedding 💍</div>
+  </div>
+</section>
+
+<section>
+  <h2>Venue</h2>
+  <iframe src="https://maps.google.com/maps?q=pune&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</section>
+
+<section>
+  <h2>RSVP</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Email" required>
+    <select>
+      <option>Will you attend?</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+    <textarea placeholder="Message"></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<section>
+  <h2>Thank You ❤️</h2>
+  <p>We can’t wait to celebrate with you.</p>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  const btn = document.getElementById("musicBtn");
+  const music = document.getElementById("bgMusic");
+
+  btn.onclick = () => {
+    if(music.paused){
+      music.play();
+      btn.innerText = "⏸";
+    } else {
+      music.pause();
+      btn.innerText = "▶";
+    }
+  }
+
+  const weddingDate = new Date("Dec 12, 2026").getTime();
+
+  setInterval(()=>{
+    const now = new Date().getTime();
+    const gap = weddingDate - now;
+
+    const days = Math.floor(gap / (1000*60*60*24));
+    document.getElementById("countdown").innerText = days + " days to go ❤️";
+  },1000);
+</script>
+
+</body>
+</html>
