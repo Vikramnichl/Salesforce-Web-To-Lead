@@ -29,8 +29,8 @@
             background: #c2a8a8;
             background: linear-gradient(221deg, #d0bebe, #ac6d6d);
             scroll-behavior: smooth;
-            max-width: 1400px;
-            margin: auto;
+            width: 100%;
+
         }
 
         h1,
@@ -42,12 +42,16 @@
         section {
             padding: clamp(60px, 8vw, 120px) 20px;
             text-align: center;
+            max-width: 1200px;
+            margin: auto;
         }
 
         /* HERO */
         .hero {
             position: relative;
-            height: 100vh;
+            min-height: 100vh;
+            height: auto;
+            padding: 40px 20px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -96,12 +100,11 @@
             font-size: 1.8rem;
             color: gold;
             line-height: 1.4;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.9px;
             text-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
-            display: inline;
-            flex-direction: column;
+           
             align-items: center;
-flex-wrap: nowrap;
+
         }
 
         .names span {
@@ -119,9 +122,9 @@ flex-wrap: nowrap;
             text-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
         }
 
-         .lastname-top,
+        .lastname-top,
         .lastname-bottom {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(1.5rem, 5vw, 3.5rem);
             color: rgb(24, 23, 22);
             letter-spacing: 2px;
             text-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
@@ -949,130 +952,132 @@ flex-wrap: nowrap;
             box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
         }
 
-/* SECTION */
-.thank-section {
-    position: relative;
-    padding: 140px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        /* SECTION */
+        .thank-section {
+            position: relative;
+            padding: 140px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        rgba(255, 215, 0, 0.08)
-    );
+            background: linear-gradient(to bottom,
+                    transparent,
+                    rgba(255, 215, 0, 0.08));
 
-    overflow: hidden;
-}
+            overflow: hidden;
+        }
 
-/* CARD (NEW - PREMIUM LOOK) */
-.thank-card {
-    position: relative;
-    z-index: 2;
+        /* CARD (NEW - PREMIUM LOOK) */
+        .thank-card {
+            position: relative;
+            z-index: 2;
 
-    max-width: 550px;
-    width: 100%;
-    padding: 50px 30px;
+            max-width: 550px;
+            width: 100%;
+            padding: 50px 30px;
 
-    border-radius: 25px;
+            border-radius: 25px;
 
-    background: rgba(255,255,255,0.65);
-    backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(15px);
 
-    border: 1px solid rgba(255,215,0,0.3);
+            border: 1px solid rgba(255, 215, 0, 0.3);
 
-    box-shadow: 0 25px 70px rgba(0,0,0,0.25);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
 
-    text-align: center;
+            text-align: center;
 
-    transition: 0.4s;
-}
+            transition: 0.4s;
+        }
 
-.thank-card:hover {
-    transform: translateY(-8px);
-}
+        .thank-card:hover {
+            transform: translateY(-8px);
+        }
 
-/* TITLE */
-.thank-title {
-    font-size: clamp(2rem, 5vw, 2.8rem);
-    color: #7a4b4b;
-    margin-bottom: 15px;
-}
+        /* TITLE */
+        .thank-title {
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            color: #7a4b4b;
+            margin-bottom: 15px;
+        }
 
-/* TEXT */
-.thank-text {
-    font-size: 1.05rem;
-    color: #555;
-    margin-bottom: 25px;
-}
+        /* TEXT */
+        .thank-text {
+            font-size: 1.05rem;
+            color: #555;
+            margin-bottom: 25px;
+        }
 
-/* SUBTEXT */
-.thank-sub {
-    font-size: 0.9rem;
-    color: #888;
-    margin-bottom: 10px;
-}
+        /* SUBTEXT */
+        .thank-sub {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 10px;
+        }
 
-/* SIGNATURE */
-.signature {
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
-    color: gold;
-    letter-spacing: 2px;
-}
+        /* SIGNATURE */
+        .signature {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            color: gold;
+            letter-spacing: 2px;
+        }
 
-/* NAME STYLE */
-.name {
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(30px) scale(0.9);
-}
+        /* NAME STYLE */
+        .name {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(30px) scale(0.9);
+        }
 
-/* & SYMBOL */
-.and {
-    margin: 0 10px;
-    color: #aaa;
-}
+        /* & SYMBOL */
+        .and {
+            margin: 0 10px;
+            color: #aaa;
+        }
 
-/* ANIMATION */
-.show-signature .name {
-    animation: luxuryFade 1.2s ease forwards;
-}
+        /* ANIMATION */
+        .show-signature .name {
+            animation: luxuryFade 1.2s ease forwards;
+        }
 
-.show-signature .name:nth-child(1) {
-    animation-delay: 0.2s;
-}
+        .show-signature .name:nth-child(1) {
+            animation-delay: 0.2s;
+        }
 
-.show-signature .name:nth-child(3) {
-    animation-delay: 0.6s;
-}
+        .show-signature .name:nth-child(3) {
+            animation-delay: 0.6s;
+        }
 
-/* PREMIUM KEYFRAME */
-@keyframes luxuryFade {
-    0% {
-        opacity: 0;
-        transform: translateY(30px) scale(0.8);
-    }
-    60% {
-        opacity: 1;
-        transform: translateY(-5px) scale(1.05);
-    }
-    100% {
-        transform: translateY(0) scale(1);
-    }
-}
+        
 
-/* CONFETTI FIX */
-#confettiCanvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+        /* PREMIUM KEYFRAME */
+        @keyframes luxuryFade {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.8);
+            }
 
-    pointer-events: none;
-    z-index: 1;
-}
+            60% {
+                opacity: 1;
+                transform: translateY(-5px) scale(1.05);
+            }
+
+            100% {
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* CONFETTI FIX */
+        #confettiCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            pointer-events: none;
+            z-index: 1;
+        }
 
 
 
@@ -1123,12 +1128,8 @@ flex-wrap: nowrap;
             .time-box p {
                 font-size: 0.6rem;
             }
- .name-top,
-    .name-bottom,
-    .lastname-top,
-    .lastname-bottom {
-        font-size: 1.5rem;
-    }
+
+
         }
     </style>
 
@@ -1213,38 +1214,38 @@ flex-wrap: nowrap;
 
 
 
-<img src="https://raw.githubusercontent.com/Vikramnichl/Salesforce-Web-To-Lead/refs/heads/main/couple2.jpg"
+            <img src="https://raw.githubusercontent.com/Vikramnichl/Salesforce-Web-To-Lead/refs/heads/main/couple2.jpg"
                 class="couple-img">
-<div class="count-content">
-            <h2 class="count-title">Counting Down to Forever</h2>
-            <div class="divider"></div>
+            <div class="count-content">
+                <h2 class="count-title">Counting Down to Forever</h2>
+                <div class="divider"></div>
 
-            <div class="count-boxes">
-                <div class="time-box">
-                    <span id="days">00</span>
-                    <p>Days</p>
+                <div class="count-boxes">
+                    <div class="time-box">
+                        <span id="days">00</span>
+                        <p>Days</p>
+                    </div>
+                    <div class="time-box">
+                        <span id="hours">00</span>
+                        <p>Hours</p>
+                    </div>
+                    <div class="time-box">
+                        <span id="minutes">00</span>
+                        <p>Minutes</p>
+                    </div>
+                    <div class="time-box">
+                        <span id="seconds">00</span>
+                        <p>Seconds</p>
+                    </div>
                 </div>
-                <div class="time-box">
-                    <span id="hours">00</span>
-                    <p>Hours</p>
-                </div>
-                <div class="time-box">
-                    <span id="minutes">00</span>
-                    <p>Minutes</p>
-                </div>
-                <div class="time-box">
-                    <span id="seconds">00</span>
-                    <p>Seconds</p>
-                </div>
+
             </div>
-
-        </div>
 
 
         </div>
 
     </section>
-  
+
     <section>
         <h2>Events</h2>
         <div class="divider"></div>
@@ -1313,94 +1314,50 @@ flex-wrap: nowrap;
 
     </section>
 
-    <!-- <section class="rsvp-section">
-        <div class="rsvp-card">
+    <section class="thank-section" id="finalSection">
 
-            <h2 class="rsvp-title">RSVP</h2>
+        <!-- Confetti -->
+        <canvas id="confettiCanvas"></canvas>
+
+        <div class="thank-card">
+
+            <h2 class="thank-title">Thank You </h2>
+
+            <p class="thank-text">
+                Your presence will make our celebration truly unforgettable.
+            </p>
+
             <div class="divider"></div>
 
-            <p class="rsvp-subtext">We would be honored to have you join us ❤️</p>
+            <p class="thank-sub">
+                With love & joy,
+            </p>
 
-            <form class="rsvp-form">
-
-                <div class="input-group">
-                    <input type="text" required>
-                    <label>Your Name</label>
-                </div>
-
-                <div class="input-group">
-                    <input type="email" required>
-                    <label>Email Address</label>
-                </div>
-
-              
-                <div class="input-group">
-                    <select required>
-                        <option value="" disabled selected></option>
-                        <option>Yes, I will attend</option>
-                        <option>No, I can't make it</option>
-                    </select>
-                    <label>Will you attend?</label>
-                </div>
-
-                <div class="input-group">
-                    <textarea rows="3"></textarea>
-                    <label>Message (Optional)</label>
-                </div>
-
-                <button class="rsvp-btn">Send RSVP ✨</button>
-
-            </form>
-
-        </div>
-    </section> -->
-<section class="thank-section" id="finalSection">
-
-    <!-- Confetti -->
-    <canvas id="confettiCanvas"></canvas>
-
-    <div class="thank-card">
-
-        <h2 class="thank-title">Thank You </h2>
-
-        <p class="thank-text">
-            Your presence will make our celebration truly unforgettable.
-        </p>
-
-        <div class="divider"></div>
-
-        <p class="thank-sub">
-            With love & joy,
-        </p>
-
-        <!-- SIGNATURE -->
-          <h1 class="names" id="nameText">
+            <!-- SIGNATURE -->
+            <h1 class="names" id="nameText">
                 <span class="lastname-top">Vikram</span>
                 <span class="amp">&</span>
                 <span class="lastname-bottom">Yogita</span>
             </h1>
-<h1>❤️</h1>
-    </div>
-</section>
+            <h1>❤️</h1>
+        </div>
+    </section>
 
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
     <script>
         AOS.init();
 
 
         // LETTER ANIMATION
-     function animateNames() {
-    const letters = document.querySelectorAll(".name-top, .name-bottom");
+        const text = document.getElementById("nameText");
+        const letters = text.innerText.split("");
 
-    letters.forEach((el, i) => {
-        setTimeout(() => {
-            el.style.opacity = "1";
-            el.style.transform = "translateY(0)";
-        }, i * 200);
-    });
-}
+        text.innerHTML = letters.map(letter => {
+            return `<span>${letter === " " ? "&nbsp;" : letter}</span>`;
+        }).join("");
+
         function animateNames() {
             const letters = document.querySelectorAll("#nameText span");
 
@@ -1417,7 +1374,7 @@ flex-wrap: nowrap;
 
         btn.onclick = () => {
             if (music.paused) {
-                music.play();
+                music.play().catch(() => {});
                 btn.innerText = "⏸";
             } else {
                 music.pause();
@@ -1445,7 +1402,7 @@ flex-wrap: nowrap;
         const intro = document.getElementById("introScreen");
         const openBtn = document.getElementById("openBtn");
 
-          openBtn.onclick = () => {
+        openBtn.onclick = () => {
 
             // start door opening
             document.body.classList.add("open");
@@ -1558,101 +1515,104 @@ flex-wrap: nowrap;
 
         canvas.addEventListener("touchstart", () => isDrawing = true);
         canvas.addEventListener("touchend", () => isDrawing = false);
-        canvas.addEventListener("touchmove", scratch);
+       canvas.addEventListener("touchmove", (e) => {
+    e.preventDefault();
+    scratch(e);
+}, { passive: false });
     </script>
     <script>
-// ===== INTERSECTION OBSERVER =====
-const finalSection = document.getElementById("finalSection");
+        // ===== INTERSECTION OBSERVER =====
+        const finalSection = document.getElementById("finalSection");
 
-const observer = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) {
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
 
-        // 💌 Signature Animation
-        finalSection.classList.add("show-signature");
+                // 💌 Signature Animation
+                finalSection.classList.add("show-signature");
 
-        // 🎉 Confetti
-        startConfetti();
+                // 🎉 Confetti
+                startConfetti();
 
-        // 🎵 Music Fade
-        fadeMusic();
+                // 🎵 Music Fade
+                fadeMusic();
 
-    }
-}, { threshold: 0.5 });
+            }
+        }, { threshold: 0.5 });
 
-observer.observe(finalSection);
+        observer.observe(finalSection);
 
 
-// ===== 🎉 CONFETTI =====
-const canvas = document.getElementById("confettiCanvas");
-const ctx = canvas.getContext("2d");
+        // ===== 🎉 CONFETTI =====
+        const canvas = document.getElementById("confettiCanvas");
+        const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
-let confetti = [];
+        let confetti = [];
 
-function createConfetti() {
-    for (let i = 0; i < 120; i++) {
-        confetti.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height - canvas.height,
-            size: Math.random() * 6 + 2,
-            speed: Math.random() * 3 + 2,
-            color: ["#FFD700", "#fff", "#f5c6c6"][Math.floor(Math.random()*3)]
+        function createConfetti() {
+            for (let i = 0; i < 120; i++) {
+                confetti.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    size: Math.random() * 6 + 2,
+                    speed: Math.random() * 3 + 2,
+                    color: ["#FFD700", "#fff", "#f5c6c6"][Math.floor(Math.random() * 3)]
+                });
+            }
+        }
+
+        function drawConfetti() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            confetti.forEach((c) => {
+                c.y += c.speed;
+
+                if (c.y > canvas.height) {
+                    c.y = -10;
+                }
+
+                ctx.fillStyle = c.color;
+                ctx.fillRect(c.x, c.y, c.size, c.size);
+            });
+
+            requestAnimationFrame(drawConfetti);
+        }
+
+        function startConfetti() {
+            if (confetti.length === 0) {
+                createConfetti();
+                drawConfetti();
+            }
+        }
+
+
+        // ===== 🎵 MUSIC FADE =====
+        const audio = document.getElementById("bgMusic");// your existing music
+
+        function fadeMusic() {
+            if (!audio) return;
+
+            let volume = audio.volume;
+
+            const fade = setInterval(() => {
+                if (volume > 0.3) {
+                    volume -= 0.05;
+                    audio.volume = volume;
+                } else {
+                    clearInterval(fade);
+                }
+            }, 200);
+        }
+
+
+        // ===== RESPONSIVE CANVAS =====
+        window.addEventListener("resize", () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
         });
-    }
-}
-
-function drawConfetti() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    confetti.forEach((c) => {
-        c.y += c.speed;
-
-        if (c.y > canvas.height) {
-            c.y = -10;
-        }
-
-        ctx.fillStyle = c.color;
-        ctx.fillRect(c.x, c.y, c.size, c.size);
-    });
-
-    requestAnimationFrame(drawConfetti);
-}
-
-function startConfetti() {
-    if (confetti.length === 0) {
-        createConfetti();
-        drawConfetti();
-    }
-}
-
-
-// ===== 🎵 MUSIC FADE =====
-const audio = document.querySelector("audio"); // your existing music
-
-function fadeMusic() {
-    if (!audio) return;
-
-    let volume = audio.volume;
-
-    const fade = setInterval(() => {
-        if (volume > 0.3) {
-            volume -= 0.05;
-            audio.volume = volume;
-        } else {
-            clearInterval(fade);
-        }
-    }, 200);
-}
-
-
-// ===== RESPONSIVE CANVAS =====
-window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
-</script>
+    </script>
 
 </body>
 
