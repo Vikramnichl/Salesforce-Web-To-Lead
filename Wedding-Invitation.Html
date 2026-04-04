@@ -101,6 +101,7 @@
             display: inline;
             flex-direction: column;
             align-items: center;
+flex-wrap: nowrap;
         }
 
         .names span {
@@ -1122,6 +1123,12 @@
             .time-box p {
                 font-size: 0.6rem;
             }
+ .name-top,
+    .name-bottom,
+    .lastname-top,
+    .lastname-bottom {
+        font-size: 1.5rem;
+    }
         }
     </style>
 
@@ -1382,13 +1389,16 @@
 
 
         // LETTER ANIMATION
-        const text = document.getElementById("nameText");
-        const letters = text.innerText.split("");
+     function animateNames() {
+    const letters = document.querySelectorAll(".name-top, .name-bottom");
 
-        text.innerHTML = letters.map(letter => {
-            return `<span>${letter === " " ? "&nbsp;" : letter}</span>`;
-        }).join("");
-
+    letters.forEach((el, i) => {
+        setTimeout(() => {
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
+        }, i * 200);
+    });
+}
         function animateNames() {
             const letters = document.querySelectorAll("#nameText span");
 
