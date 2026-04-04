@@ -1168,7 +1168,7 @@
         </div>
     </section>
 
-    <section class="quote-section">
+    <section class="quote-section" id="nextSection">
         <div class="quote-box" data-aos="fade-up">
             <span class="quote-mark">“</span>
 
@@ -1433,7 +1433,7 @@
         const intro = document.getElementById("introScreen");
         const openBtn = document.getElementById("openBtn");
 
-        openBtn.onclick = () => {
+          openBtn.onclick = () => {
 
             // start door opening
             document.body.classList.add("open");
@@ -1448,6 +1448,13 @@
             setTimeout(() => {
                 intro.style.display = "none";
             }, 1300);
+
+            // ✨ AUTO SCROLL (ADD THIS)
+            setTimeout(() => {
+                document.getElementById("nextSection").scrollIntoView({
+                    behavior: "smooth"
+                });
+            }, 5000); // delay = after intro fully opens
         };
 
     </script>
